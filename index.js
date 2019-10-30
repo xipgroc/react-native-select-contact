@@ -19,7 +19,7 @@ const SelectContactApi = {
 
     selectContact() {
         if (currentlyOpen) {
-            return Promise.reject(new Error('Cannot open the contact selector twice'));
+            return Promise.reject(new Error('No es pot obrir el selector de contactes dos cops'));
         }
 
         currentlyOpen = true;
@@ -50,7 +50,7 @@ const SelectContactApi = {
 
               let addresses = contact && contact.postalAddresses || [];
               if (addresses.length === 0) {
-                  Alert.alert('No Postal Addresses', `We could not find any postal addresses for ${contact.name}`);
+                  Alert.alert('No Hi Ha Adreça', `No s'ha trobat cap adreça pel contacte ${contact.name}`);
                   return null;
               }
 
@@ -70,7 +70,7 @@ const SelectContactApi = {
 
                 let phones = contact && contact.phones || [];
                 if (phones.length === 0) {
-                    Alert.alert('No Phone Numbers', `We could not find any phone numbers for ${contact.name}`);
+                    Alert.alert('No Hi Ha Telèfon', `No s'ha trobat cap número de telèfon pel contacte ${contact.name}`);
                     return null;
                 }
 
@@ -90,7 +90,7 @@ const SelectContactApi = {
 
                 let emails = contact && contact.emails || [];
                 if (emails.length === 0) {
-                    Alert.alert('No Email Addresses', `We could not find any email addresses for ${contact.name}`);
+                    Alert.alert('No Hi Ha Email', `No s'ha trobat cap adreça d'email pel contacte ${contact.name}`);
                     return null;
                 }
 
@@ -117,12 +117,12 @@ function selectPhone(phones) {
     });
 
     if (Platform.OS === 'ios') {
-        options.push('Cancel');
+        options.push('Cancel·lar');
     }
 
     return new Promise(((resolve) => {
         ActionSheet.showActionSheetWithOptions({
-                title: 'Select Phone',
+                title: 'Selecciona telèfon',
                 options: options,
                 cancelButtonIndex: options.length - 1,
                 tintColor: 'blue'
@@ -149,12 +149,12 @@ function selectPostalAddress(addresses) {
   });
 
   if (Platform.OS === 'ios') {
-    options.push('Cancel');
+    options.push('Cancel·lar');
   }
 
   return new Promise(((resolve) => {
       ActionSheet.showActionSheetWithOptions({
-              title: 'Select Postal Address',
+              title: 'Seleccciona adreça',
               options: options,
               cancelButtonIndex: options.length - 1,
               tintColor: 'blue'
@@ -176,12 +176,12 @@ function selectEmail(emails) {
     });
 
     if (Platform.OS === 'ios') {
-        options.push('Cancel');
+        options.push('Cancel·lar');
     }
 
     return new Promise(((resolve) => {
         ActionSheet.showActionSheetWithOptions({
-                title: 'Select Email',
+                title: 'Selecciona email',
                 options: options,
                 cancelButtonIndex: options.length - 1,
                 tintColor: 'blue'
