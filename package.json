@@ -1,6 +1,6 @@
 {
   "name": "react-native-select-contact",
-  "version": "1.2.1",
+  "version": "1.4.0",
   "nativePackage": true,
   "typings": "./selectContact.d.ts",
   "scripts": {
@@ -38,6 +38,6 @@
     "react-native": ">=0.51.0"
   },
   "optionalDependencies": {
-    "@yfuks/react-native-action-sheet": "^0.0.4"
+    "react-native-action-sheet": "^2.2.0"
   }
 }
